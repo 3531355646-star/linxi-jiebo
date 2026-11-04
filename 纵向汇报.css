@@ -1,0 +1,40 @@
+/* One full-height scroll stop per slide. The old canvas still serves print mode. */
+html:not(.paper) .viewport{overflow-y:auto;overflow-x:hidden;scroll-snap-type:y mandatory;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#91ad9c #203640}
+html:not(.paper) .canvas{position:static;transform:none!important;width:auto;height:auto;background:none;box-shadow:none}
+html:not(.paper) .sheet-stop{height:var(--port-h);scroll-snap-align:start;display:grid;place-items:center;position:relative}
+html:not(.paper) .sheet-stop .slide{position:relative;inset:auto;display:flex;flex-direction:column;width:1600px;height:900px;zoom:var(--sheet-scale,1);box-shadow:0 8px 28px #0003}
+.sheet-stop .slide:not(.active){pointer-events:auto}
+.atlas-link{color:#23725e;text-decoration:underline}
+@media print{html:not(.paper) .viewport{overflow:visible}.sheet-stop{display:contents!important}html:not(.paper) .sheet-stop .slide{zoom:.7!important}}
+
+.design-switch{display:inline-block;color:#215c47;font-size:16px;margin:0 0 6px}.design-switch select{font:inherit;padding:4px 9px;border:1px solid #a6beb1;color:inherit;background:white}#slide-3 .figure img{max-height:505px}@media print{.design-switch{display:none}}
+
+.drawing-page{padding:30px 48px!important}
+.drawing-page header{flex-shrink:0}
+.drawing-page .chapter{font-size:14px;margin-bottom:5px}
+.drawing-page h1{font-size:29px;margin:0 0 8px}
+.drawing-full{margin:0;flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+.drawing-full img{width:100%;height:100%;object-fit:contain}
+.drawing-page footer{display:flex;justify-content:space-between;gap:18px;padding-top:8px;font-size:14px;line-height:1.5;color:#536a5e}
+.drawing-page footer a{color:#23725e;white-space:nowrap}
+.nav-dots{gap:4px}.nav-dots button{width:20px}
+.explore-launch{display:none!important}
+@media(max-width:700px){.nav-dots{overflow-x:auto;justify-content:flex-start}.nav-dots button{min-width:12px}}
+.footer-nav>button{flex-shrink:0;white-space:nowrap}.nav-dots{min-width:0}.footer-nav>span:last-of-type{white-space:nowrap;flex-shrink:0}
+
+.combined-page{padding:30px 46px 22px!important;gap:14px}
+.combined-header{flex:none}.combined-header .chapter{font-size:13px;margin-bottom:7px}.combined-header h1{font-size:35px;margin:0 0 8px}.combined-header p{font-size:19px;line-height:1.5;margin:0;color:#52685f}
+.board-grid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:12px 20px}
+.board-card{margin:0;min-width:0;min-height:0;display:flex;flex-direction:column;background:#fff;border:1px solid #dce6df;padding:7px}
+.board-card figcaption{font-size:16px;font-weight:bold;color:#23654f;margin:0 0 4px;flex:none}
+.board-card .image-button{flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+.board-card img{width:100%;height:100%;object-fit:contain;min-height:0}
+.count-1 .board-grid{display:flex}.count-1 .board-card{flex:1}
+.count-2 .board-grid{grid-template-rows:1fr;align-items:center}.count-2 .board-card{height:100%}
+.count-3 .board-card:first-child{grid-row:span 2}
+.count-5 .board-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.count-5 .board-card:first-child{grid-row:span 2}
+.combined-footer{flex:none;display:flex;justify-content:space-between;gap:15px;color:#62756b;font-size:13px}
+.live-card .motion-layout{height:100%;padding:4px;gap:8px;grid-template-columns:1fr 165px;border:0}
+.live-card .motion-sidebar{font-size:12px;gap:6px;padding:2px}.live-card .motion-sidebar h3{font-size:16px;margin:0}.live-card .motion-count{font-size:24px}.live-card .motion-ids{font-size:12px;min-height:0;line-height:1.4}.live-card .motion-note{font-size:10px;line-height:1.3}.live-card .motion-phase{font-size:12px}.live-card .motion-sidebar button{padding:6px;font-size:12px}.live-card .motion-sidebar select{padding:4px}
+
+.count-5 .board-card:first-child{grid-row:auto}.live-card .motion-sidebar>.image-button{flex:none;display:block}
